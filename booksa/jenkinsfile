@@ -29,7 +29,7 @@ pipeline{
         stage('build'){
             steps {
                 script{
-                    sh '''
+                    bat '''
                         docker build booksa/Dockerfile . -t ${name_imagen}:${tag_imagen}
                     '''
                 }
@@ -39,7 +39,7 @@ pipeline{
         stage('run'){
             steps{
                 script{
-                    sh '''
+                    bat '''
                         docker run -dp ${puerto_imagen}:80 --name ${name_final} ${name_imagen}:${tag_imagen}
                     '''
                 }
