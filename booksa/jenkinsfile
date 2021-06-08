@@ -29,11 +29,8 @@ pipeline{
         stage('build'){
             steps {
                 script{
-                    // bat '''
-                    //     docker build booksa/ -t ${name_imagen}:${tag_imagen}
-                    // '''
-                    bat '''
-                        docker build booksa/ -t nombrePureba:v1
+                    sh '''
+                        docker build booksa/ -t ${name_imagen}:${tag_imagen}
                     '''
                 }
             }
@@ -42,7 +39,7 @@ pipeline{
         stage('run'){
             steps{
                 script{
-                    bat '''
+                    sh '''
                         docker run -dp ${puerto_imagen}:80 --name ${name_final} ${name_imagen}:${tag_imagen}
                     '''
                 }
