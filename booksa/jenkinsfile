@@ -30,7 +30,7 @@ pipeline{
             steps {
                 script{
                     bat '''
-                        docker build booksa/Dockerfile . -t ${name_imagen}:${tag_imagen}
+                        docker build booksa/ -t ${name_imagen}:${tag_imagen}
                     '''
                 }
             }
