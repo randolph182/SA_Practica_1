@@ -1,0 +1,2 @@
+[webservers]
+34.70.226.196 ansible_user=rando

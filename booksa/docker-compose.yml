@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   webapp:
-    container_name: webApp
+    container_name: webapp
     build: ./
     expose: 
       - "80"
